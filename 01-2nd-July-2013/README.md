@@ -3,12 +3,14 @@ KLxRB Meetup Slides
 
 Date & Location
 ---------------
-> 2nd July 2013 @ Mindvalley HOA
+2nd July 2013 @ Mindvalley HOA
 
 How to run this
 ---------------
+```bash
 $ bundle
 $ ruby app.rb
+```
 
 Resources
 ---------
