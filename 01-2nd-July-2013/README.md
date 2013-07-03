@@ -1,6 +1,3 @@
-KLxRB Meetup Slides
-===================
-
 Date & Location
 ---------------
 2nd July 2013 @ Mindvalley HOA
