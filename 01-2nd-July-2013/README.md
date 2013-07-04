@@ -15,6 +15,7 @@ Resources
 - Aaron Patterson - http://tenderlovemaking.com/
 - Jim's Presentation during Reddot - https://github.com/jimweirich/presentation_kata_and_analysis
 - Rspec-Given - https://github.com/jimweirich/rspec-given
+- Mindvalley Code Katas - https://github.com/mindvalley/code_kata
 - Ruby Koans - http://rubykoans.com/
 - Vagrant - http://www.vagrantup.com/
 - VM Virtualbox - http://lmgtfy.com/?q=virtualbox
