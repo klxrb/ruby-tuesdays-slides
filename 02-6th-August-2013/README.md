@@ -1,7 +1,7 @@
 Date & Location
 ---------------
-6th August 2013 @ Mindvalley HOA
-24 Attendees
+- 6th August 2013 @ Mindvalley HOA
+- 24 Attendees
 
 Presentations
 -------------
