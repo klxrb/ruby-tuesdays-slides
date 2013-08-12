@@ -5,7 +5,7 @@ Date & Location
 
 Presentations
 -------------
-- Bundler & Capistrano
+- Bundler & Capistrano - https://github.com/klxrb/ruby-tuesdays-slides/tree/master/02-6th-August-2013/bundler-and-capistrano
 - Monitor Your App Behavior - https://docs.google.com/presentation/d/1nsEUW9s5_YoxXWgrwl3mvmIdkhWamYlIwADfKfJEpkc
 
 
