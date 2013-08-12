@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Bundler & Capistrano</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<style type="text/css">
+			body {
+				font-size:18px;
+			}
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h2>Bundler & Capsitrano </h2>
+					
+				</section>
+
+				<section>
+
+					<section>
+						<h2>Bundler</h2>
+						<p>http://bundler.io/</p>
+					</section>
+
+					<section>
+
+						<blockquote>
+							&ldquo;Bundler maintains a consistent environment for ruby applications. It tracks an application's code and the rubygems it needs to run, so that an application will always have the exact gems (and versions) that it needs to run.&rdquo;
+						</blockquote>
+
+					</section>
+					
+					<section>
+						
+						Install Gem 
+
+						<pre><code data-trim contenteditable>
+$ gem install bundler
+						</code></pre>
+						
+					</section>
+
+					<section>
+						
+						Create Gemfile
+
+						<pre>Gemfile<code data-trim contenteditable>
+source 'http://rubygems.org'
+gem 'rspec', '~> 2.13'
+						</code></pre>
+						
+					</section>
+
+					<section>
+						
+						Installing dependancies
+
+						<pre><code data-trim contenteditable>
+$ bundle
+Fetching gem metadata from https://rubygems.org/.........
+Fetching gem metadata from https://rubygems.org/..
+Resolving dependencies...
+Installing diff-lcs (1.2.4) 
+Installing rspec-core (2.13.1) 
+Installing rspec-expectations (2.13.0) 
+Installing rspec-mocks (2.13.1) 
+Installing rspec (2.13.0) 
+Installing bundler (1.3.5) 
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+$ ls
+Gemfile	Gemfile.lock
+						</code></pre>
+						
+					</section>
+
+					<section>
+
+						Encapsulation
+
+						<pre><code data-trim contenteditable>
+$ bundle exec rspec --version
+2.13.1
+
+$ rspec --version
+2.14.4
+
+$ bundle show rspec
+/usr/local/var/rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/rspec-2.13.1
+
+$ gem which rspec
+/usr/local/var/rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/rspec-2.14.1/lib/rspec.rb
+
+						</code></pre>		
+
+					</section>
+
+					<section>
+
+						Packaging for deployment
+
+						<pre><code data-trim contenteditable>
+$ bundle install --deployment
+
+Fetching gem metadata from https://rubygems.org/.........
+Fetching gem metadata from https://rubygems.org/..
+Installing diff-lcs (1.2.4) 
+Installing rspec-core (2.13.1) 
+Installing rspec-expectations (2.13.0) 
+Installing rspec-mocks (2.13.1) 
+Installing rspec (2.13.0) 
+Using bundler (1.3.5) 
+Your bundle is complete!
+
+$ ls
+Gemfile		Gemfile.lock	vendor
+						</code></pre>		
+
+					</section>
+
+					<section>
+
+						<pre><code data-trim contenteditable>
+$ bundle show rspec 
+/Users/jimmy/Sites/bundlertest/vendor/bundle/ruby/1.9.1/gems/rspec-2.13.0
+
+$ cat .bundle/config
+---
+BUNDLE_FROZEN: '1'
+BUNDLE_PATH: vendor/bundle
+BUNDLE_DISABLE_SHARED_GEMS: '1'
+						</code></pre>		
+
+					</section>
+
+					<section>
+						<img src="/images/bundler.png">
+					</section>
+
+	
+				</section>
+
+				<section>
+
+					<section>
+						<h2>Capistrano</h2>
+						<p>https://github.com/capistrano/capistrano</p>
+					</section>
+
+					<section>
+
+						<blockquote>
+							&ldquo;Capistrano is a utility and framework for executing commands in parallel on multiple remote machines, via SSH. &rdquo;
+						</blockquote>
+
+					</section>
+
+					<section>
+						
+						Install Gem 
+
+						<pre><code data-trim contenteditable>
+$ gem install capistrano
+						</code></pre>
+						
+					</section>
+	
+
+					<section>
+						
+						Initialize 
+
+						<pre><code data-trim contenteditable>
+$ capify .
+[add] writing './Capfile'
+[add] making directory './config'
+[add] writing './config/deploy.rb'
+[done] capified!
+
+						</code></pre>
+						
+					</section>
+
+					<section>
+						
+						Modify deploy.rb
+
+						<pre>deploy.rb<code data-trim contenteditable>
+set :application, "some-awesome-app"
+
+set :scm, "git"
+set :repository,  "git@github.com:jimmynguyc/MongiPress.git"
+
+set :user, "dev"
+set :port, 22
+
+set :deploy_to, "/home/#{user}/apps/#{application}"
+set :deploy_via, :remote_cache  # Use remote cache
+set :use_sudo, false  # Do not sudo when executing commands
+ssh_options[:forward_agent] = true  # Use SSH Agent Forwarding
+
+role :web, "123.123.123.123"
+role :app, "123.123.123.124"
+role :db, "123.123.123.125"
+						</code></pre>
+						
+					</section>
+
+
+					<section>
+						
+						Deploy away !!
+
+						<pre><code data-trim contenteditable>
+$ cap deploy:setup
+# Setup deploy_to the folder structure
+
+$ cap deploy
+# Update files
+						</code></pre>
+						
+					</section>
+
+
+
+					<section>
+						
+						Deploy Hooks
+						<pre>deploy.rb<code data-trim contenteditable>
+after 'deploy', 'deploy:cleanup'
+before 'deploy:cleanup', 'deploy:woot'
+
+namespace :deploy
+	task :restart, :roles => web
+		run "touch #{ current_path }/tmp/restart.txt"
+	end
+
+	task :woot
+		run "echo 'woot woot'"
+	end
+end
+						</code></pre>
+						
+					</section>
+
+				</section>
+
+				<section>
+					
+					<section>
+						<h2>Bundler + Capistrano</h2>
+					</section>
+
+					<section>
+						<pre>deploy.rb<code data-trim contenteditable>
+require 'bundler/capistrano'
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Webistrano - For non techy :p</h2>
+
+						https://github.com/peritor/webistrano
+					</section>
+
+				</section>
+
+			</div>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
