@@ -13,7 +13,7 @@ Resources
 - RTanque - https://github.com/awilliams/RTanque
 - RTanque bot gists - https://github.com/awilliams/RTanque/wiki/bot-gists
 - Ruby Tuesdays RTanque Battle Bots - https://github.com/klxrb/RubyTuesdaysRTanks
-
+- Ruby Tuesdays RTanque Battle Replays - http://www.youtube.com/playlist?list=PLZE2x8ruudKYp7R4kOkUWK_rRiLDsBIub
 
 Collaborations
 --------------
