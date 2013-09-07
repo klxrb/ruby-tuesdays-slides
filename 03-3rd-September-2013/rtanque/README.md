@@ -1,6 +1,6 @@
 Date & Location
 ---------------
-2nd July 2013 @ Mindvalley HOA
+3rd September 2013 @ Mindvalley HOA
 
 How to run this
 ---------------
