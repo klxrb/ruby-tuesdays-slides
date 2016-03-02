@@ -1,0 +1,6 @@
+gem 'capistrano-rails'
+gem 'capistrano-rbenv'
+gem 'capistrano-rbenv-install'
+gem 'capistrano-safe-deploy-to'
+gem 'capistrano-sidekiq'
+gem 'capistrano3-puma'
