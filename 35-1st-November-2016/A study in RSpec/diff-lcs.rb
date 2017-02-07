@@ -1,0 +1,25 @@
+require 'diff/lcs'
+
+seq1 = %w(a b c e h j l m n p)
+seq2 = %w(b c d e f j k l m r s t)
+
+lcs = Diff::LCS.LCS(seq1, seq2)
+diffs = Diff::LCS.diff(seq1, seq2)
+sdiff = Diff::LCS.sdiff(seq1, seq2)
+seq = Diff::LCS.traverse_sequences(seq1, seq2, callback_obj)
+bal = Diff::LCS.traverse_balanced(seq1, seq2, callback_obj)
+seq2 == Diff::LCS.patch!(seq1, diffs)
+seq1 == Diff::LCS.unpatch!(seq2, diffs)
+seq2 == Diff::LCS.patch!(seq1, sdiff)
+seq1 == Diff::LCS.unpatch!(seq2, sdiff)
+
+seq1.extend(Diff::LCS)
+lcs = seq1.lcs(seq2)
+diffs = seq1.diff(seq2)
+sdiff = seq1.sdiff(seq2)
+seq = seq1.traverse_sequences(seq2, callback_obj)
+bal = seq1.traverse_balanced(seq2, callback_obj)
+seq2 == seq1.patch!(diffs)
+seq1 == seq2.unpatch!(diffs)
+seq2 == seq1.patch!(sdiff)
+seq1 == seq2.unpatch!(sdiff)
