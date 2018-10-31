@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>KL Ruby Brigade Meetup</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+    <style type="text/css">
+      @-webkit-keyframes slidetounlock {
+        0% {
+          background-position: -720px 0;
+        }
+        100% {
+          background-position: 720px 0;
+        }
+      }
+
+      @-webkit-keyframes spinningslidetounlock {
+        0% {
+          background-position: -720px 0;
+        }
+        100% {
+          background-position: 720px 0;
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      .rainbows {
+        position: absolute;
+        width: 800px;
+        height: 100px;
+        left: 50%;
+        top: 50%;
+        margin-left: -400px !important;
+        margin-top: -50px !important;
+      }
+      .rainbow {
+        -webkit-animation: spinningslidetounlock 1.5s infinite linear;
+        background: -webkit-gradient(linear, left top, right top, color-stop(0, #4070FF), color-stop(0.750, #FF9653), color-stop(0.875, #FFBBBB), color-stop(1, #2AFF31));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 160px !important;
+        font-family: "Comic Sans MS", cursive, sans-serif !important;
+        font-weight: bold !important;
+        line-height: 160px !important;
+        position: absolute;
+        top:0;
+        left:0;
+      }
+      .rainbow-nospin {
+        -webkit-animation: slidetounlock 5s infinite linear;
+        background: -webkit-gradient(linear, left top, right top, color-stop(0, #4070FF), color-stop(0.750, #FF9653), color-stop(0.875, #FFBBBB), color-stop(1, #2AFF31));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+      }
+    </style>
+
+    <script>
+      var the_int = false;
+      function addText(){
+        var ranx = 400 - ( 800 * Math.random());
+        var rany = 400 - ( 600 * Math.random());
+        $('.rainbows').append('<div style="margin-left:'+ranx+'px;margin-top:'+rany+'px;" class="rainbow">TESTING</div>');
+      }
+
+    </script>
+
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<img src="images/ruby-tuesdays.png">
+
+					<br /><br />
+
+					<div style="font-size:26px;line-height:27px;">
+						<table style="margin:auto">
+              <tr><td>SSID: </td><td>surialabs</td></tr>
+              <tr><td>Guest Pass: </td><td>mimir2016</td></tr>
+						</table>
+					</div>
+
+				</section>
+
+				<section>
+
+          <section>
+            Brought to you by <br />
+            <img src="/images/surialabs.png" height="150" style="background: white">
+            <img src="/images/klxrb_logo.png" height="150" style="background: white">
+          </section>
+
+          <section style="font-size:26px;line-height:27px;">
+            <img src="/images/wifi.jpg" height="500">
+              <table style="margin:auto">
+                <tr><td>SSID: </td><td>surialabs</td></tr>
+                <tr><td>Guest Pass: </td><td>mimir2016</td></tr>
+              </table>
+          </section>
+
+					<section>
+              <div style="text-align:center">
+                <img src="/images/facebook.jpg" alt=""> <br />
+                https://www.facebook.com/groups/klxrb <br />
+                http://rubybrigade.my
+              </div>
+          </section>
+
+          <section>
+              <div style="text-align:center">
+                <img src="/images/meetup.svg" height=120 style="background:white"> <br />
+                https://www.meetup.com/ruby-malaysia/
+              </div>
+          </section>
+
+          <section>
+              <div style="text-align:center">
+                <img src="/images/github-logo.png" width=80> <br />
+                https://www.github.com/klxrb
+              </div>
+          </section>
+
+					<section>
+              <div style="text-align:center">
+                <img src="/images/slack.png" width="100" style="border: none; background: none; box-shadow: none"> <br />
+                http://rubybrigade.my/slack_invite<br />
+								http://bit.ly/rubymyslack
+              </div>
+          </section>
+
+				</section>
+
+
+        <section>
+
+					<section>
+						<img src="/images/its something.png">
+						<br />
+						<font size="5">Note to self: Remember to introduce yourself</font>
+					</section>
+
+        </section>
+
+				<section>
+          <section>
+            <div>
+              <h1>Hacktoberfest (Contribute to Open Source Project) </h1>
+              <br />
+              <h2>by Haziq Hafizuddin</h2>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h1>Rails Deployment using Nanobox</h1>
+              <br />
+              <h2>by Hafiz Khairudin</h2>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h1>Being part of a community</h1>
+              <br />
+              <h2>by Carlos Lima</h2>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h1>Running iruby Jupyter using tmpnb</h1>
+              <br />
+              <h2>by Jimmy Ngu</h2>
+            </div>
+          </section>
+
+	      </section>
+
+        <section>
+          <section>
+            <h2>5 Ruby Tips</h2>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h2>News</h2>
+          </section>
+
+          <section>
+            <img style="border: none; box-shadow: none; background: none" width="500" src="/images/rubyconfmy-logo.png"/>
+            <h3>RubyConf MY 2017</h3>
+            <br />
+            October 12 - 13
+          </section>
+
+          <section>
+            Last Minute Sponsorship? (We still have booth spaces) <br />
+          </section>
+
+          <section>
+            <h2>Hirings</h2>
+          </section>
+
+          <section>
+            <h2>Talk about RubyKaigi 2017</h2>
+          </section>
+
+        </section>
+
+				<section>
+					<h1>See you all Next Month !!!</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+      Reveal.addEventListener( 'startAnnoyingTexts', function() {
+        the_int = setInterval(addText,500);
+      });
+      Reveal.addEventListener( 'clearAnnoyingTexts', function() {
+        clearInterval(the_int);
+        $('.rainbows .rainbow').remove()
+      });
+
+		</script>
+
+	</body>
+</html>
