@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>KL Ruby Brigade Meetup</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <script>
+      var the_int = false;
+      function addText(){
+        var ranx = 400 - ( 800 * Math.random());
+        var rany = 400 - ( 600 * Math.random());
+        $('.rainbows').append('<div style="margin-left:'+ranx+'px;margin-top:'+rany+'px;" class="rainbow">TESTING</div>');
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <img src="images/ruby-tuesdays-73.png">
+        </section>
+
+        <section>
+
+          <section>
+            Brought to you by <br />
+            <img src="/images/engineersmy.png" height="150" style="background: white">
+            <img src="/images/klxrb.png" height="150" style="background: white">
+          </section>
+
+          <section>
+            <div style="text-align:center">
+              <img src="/images/facebook.jpg" alt=""> <br />
+              https://www.facebook.com/groups/klxrb <br />
+              https://rubybrigade.my
+            </div>
+          </section>
+
+          <section>
+            <div style="text-align:center">
+              <img src="/images/meetup.svg" height=120 style="background:white"> <br />
+              https://www.meetup.com/ruby-malaysia/
+            </div>
+          </section>
+
+          <section>
+            <div style="text-align:center">
+              <img src="/images/github-logo.png" width=80> <br />
+              https://www.github.com/klxrb
+            </div>
+          </section>
+
+          <section>
+            <div style="text-align:center">
+              <img src="/images/slack.png" width="100" style="border: none; background: none; box-shadow: none"> <br />
+              https://rubybrigade.my/slack_invite<br />
+              https://bit.ly/rubymyslack
+            </div>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <img src="/images/its_something.png">
+            <br />
+            <font size="5">Note to self: Remember to introduce yourself</font>
+          </section>
+
+          <section>
+            <h3>Reminder #1: Comment / Chat</h3>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Hiring Shoutouts</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <div>
+              <h1>Proactive Record </h1>
+              <br />
+              <h2>by Hassanim (aka Chris P Bacon)</h2>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h1>AWS CDK setup for Ruby on Rails</h1>
+              <br />
+              <h2>by Kaine Wright</h2>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <div style="text-align:center">
+              <img src="/images/ruby-code-clinic.png" style="border: none; background: none; box-shadow: none"> <br />
+              Bringing back Code Clinic
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>See you all next month !!!</h2>
+          </section>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+      Reveal.addEventListener( 'startAnnoyingTexts', function() {
+        the_int = setInterval(addText,500);
+      });
+      Reveal.addEventListener( 'clearAnnoyingTexts', function() {
+        clearInterval(the_int);
+        $('.rainbows .rainbow').remove()
+      });
+
+    </script>
+
+  </body>
+</html>
